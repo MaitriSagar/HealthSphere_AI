@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSphere AI</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Bootstrap Icons (We keep this because vector icons are still great!) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Custom configuration to match our dashboard colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb', // Modern Blue
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-800 font-sans antialiased">
+
+    <!-- Modern Navigation Bar -->
+    <nav class="bg-white shadow-sm border-b border-slate-200 mb-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center gap-2 text-xl font-bold text-slate-800 hover:text-primary transition">
+                        <div class="bg-primary text-white p-1.5 rounded-lg">
+                            <i class="bi bi-heart-pulse-fill"></i>
+                        </div>
+                        HealthSphere <span class="text-primary font-extrabold">AI</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-slate-500 hover:text-slate-900 font-medium px-3 py-2 rounded-md transition">Dashboard</a>
+                    <a href="#" class="text-slate-500 hover:text-slate-900 font-medium px-3 py-2 rounded-md transition">Documentation</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>

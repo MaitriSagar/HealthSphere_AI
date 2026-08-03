@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10 p-8 bg-white rounded-2xl shadow-xl border border-gray-100">
+    <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-800">Renal Function Assessment</h2>
+        <p class="text-gray-500 mt-2">Enter the optimized top 6 biological markers</p>
+    </div>
+
+    <form action="/predict_kidney" method="POST" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Specific Gravity (sg) -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Specific Gravity (sg)</label>
+                <input type="number" step="any" name="sg" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition" placeholder="e.g., 1.020">
+            </div>
+
+            <!-- Hemoglobin (hemo) -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Hemoglobin (hemo)</label>
+                <input type="number" step="any" name="hemo" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition">
+            </div>
+
+            <!-- Serum Creatinine (sc) -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Serum Creatinine (sc)</label>
+                <input type="number" step="any" name="sc" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition" placeholder="e.g., 1.2">
+            </div>
+
+            <!-- Packed Cell Volume (pcv) -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Packed Cell Volume (pcv)</label>
+                <input type="number" step="any" name="pcv" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition">
+            </div>
+
+            <!-- Albumin (al) -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Albumin (al)</label>
+                <input type="number" step="any" name="al" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition" placeholder="e.g., 0, 1, 2, 3">
+            </div>
+
+            <!-- Blood Glucose Random (bgr) -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Blood Glucose Random (bgr)</label>
+                <input type="number" step="any" name="bgr" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition">
+            </div>
+
+        </div>
+
+        <button type="submit" class="w-full mt-6 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1">
+            Run AI Analysis
+        </button>
+    </form>
+</div>
+{% endblock %}

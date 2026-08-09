@@ -1,8 +1,8 @@
 # HealthSphere AI
 
-# HealthSphere AI
-
 🚀 **Live Demo: [Click here to try the live application!](https://healthsphere-ai-nx77.onrender.com)**
+
+Hi! Welcome to the repository for my college major project, **HealthSphere AI**. 
 
 This is a web application I built that uses Machine Learning to help predict the risk of three major health conditions: Diabetes, Heart Disease, and Chronic Kidney Disease (CKD). I built the entire pipeline from scratch—from cleaning the raw datasets and training the models in Jupyter Notebooks, to building the Python Flask backend and designing the frontend UI.
 
@@ -30,5 +30,5 @@ If you are evaluating this project, here is how you can get it running locally o
 
 **1. Clone this repository**
 ```bash
-git clone [https://github.com/YOUR_USERNAME/HealthSphere_AI.git](https://github.com/YOUR_USERNAME/HealthSphere_AI.git)
+git clone [https://github.com/MaitriSagar/HealthSphere_AI.git](https://github.com/MaitriSagar/HealthSphere_AI.git)
 cd HealthSphere_AI

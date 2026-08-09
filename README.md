@@ -2,7 +2,7 @@
 
 🚀 **Live Demo: [Click here to try the live application!](https://healthsphere-ai-nx77.onrender.com)**
 
-Hi! Welcome to the repository for my college major project, **HealthSphere AI**. 
+Hi! Welcome to the repository for my first ML project, **HealthSphere AI**. 
 
 This is a web application I built that uses Machine Learning to help predict the risk of three major health conditions: Diabetes, Heart Disease, and Chronic Kidney Disease (CKD). I built the entire pipeline from scratch—from cleaning the raw datasets and training the models in Jupyter Notebooks, to building the Python Flask backend and designing the frontend UI.
 
@@ -28,7 +28,20 @@ To fix this and make the application user-friendly:
 
 If you are evaluating this project, here is how you can get it running locally on your computer in just a few minutes:
 
-**1. Clone this repository**
 ```bash
+# 1. Clone this repository and enter the directory
 git clone [https://github.com/MaitriSagar/HealthSphere_AI.git](https://github.com/MaitriSagar/HealthSphere_AI.git)
 cd HealthSphere_AI
+
+# 2. Set up a Virtual Environment
+python -m venv venv
+
+# 3. Activate the Virtual Environment
+# --> If you are on Windows, run: venv\Scripts\activate
+# --> If you are on Mac/Linux, run: source venv/bin/activate
+
+# 4. Install the required libraries
+pip install -r requirements.txt
+
+# 5. Boot up the server
+python app.py

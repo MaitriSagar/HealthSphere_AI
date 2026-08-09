@@ -12,7 +12,7 @@ diabetes_model = pickle.load(open(os.path.join(models_dir, 'diabetes_model.pkl')
 heart_model = pickle.load(open(os.path.join(models_dir, 'heart_model.pkl'), 'rb'))
 ckd_model = pickle.load(open(os.path.join(models_dir, 'ckd_model.pkl'), 'rb'))
 
-# --- PAGE ROUTES (To display the HTML) ---
+# PAGE ROUTES 
 @app.route('/')
 def dashboard():
     return render_template('dashboard.html')
@@ -29,7 +29,7 @@ def heart_page():
 def kidney_page():
     return render_template('kidney_form.html')
 
-# --- PREDICTION ROUTES (To do the AI math) ---
+# PREDICTION ROUTES 
 
 # 1. Diabetes Prediction
 @app.route('/predict_diabetes', methods=['POST'])
@@ -75,9 +75,9 @@ def predict_kidney():
         float(request.form['bgr'])
     ]
     prediction = ckd_model.predict([features])[0]
-    result_text = "High Risk of Chronic Kidney Disease" if prediction == 1 else "Low Risk of Chronic Kidney Disease"
+    # THE FIX: Changed 'prediction == 1' to 'prediction == 0' so it matches the AI's math!
+    result_text = "High Risk of Chronic Kidney Disease" if prediction == 0 else "Low Risk of Chronic Kidney Disease"
     return render_template('result.html', result=result_text, module="Renal Function Module")
 
-# --- START THE SERVER ---
 if __name__ == '__main__':
     app.run(debug=True)
